@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Single Page web app</title>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+            body{
+                margin:0;
+                padding: 0;
+            }
+            .topnav{
+                background-color: white;
+                padding: 8px 16px;
+                overflow: hidden;
+                
+            }
+            .oslo{
+                float: left;
+                display: block;
+                font-size: 30px;
+                color: hotpink;
+                padding: 0px 10px;
+                margin-left: 50px;
+                font-weight: lighter;
+                padding-bottom: 5px;
+            }
+
+            .links{
+                display: block;
+                float: right;
+                margin-right: 40px;
+            }
+            .links a{
+                text-decoration: none;
+                color: black;
+                padding: 16px 8px;
+            }
+            .signupbtn{
+                border-radius: 20px;
+                border: none;
+                padding: 5px 20px;
+                font-size: 15px;
+                color: white;
+                font-weight: bold;
+                margin-left: 15px;
+                background-color: hotpink;
+            }
+            .container{
+               position: relative;
+         
+            }
+            .centered{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: fit-content;
+                line-height:1.6;
+                transform: translate(-50%, -50%);
+                text-align: center;    
+            }
+            .container img{
+                opacity: 0.3;
+                height: 500px;
+                width: 100%;  
+               
+            }
+            .about{
+                padding: 8px 16px;
+                display: inline-block;
+                width: 70%;
+                margin-left: 20%;
+                margin-top: 20px;
+            }
+            .para1{
+                float: left;
+                padding-left: 16px;
+                width: 40%;
+                text-align: left;
+              
+            }
+            .aboutimg{
+                float: right;
+                margin-top: 20px;
+                padding-top: 20px;
+            }
+            .aboutimg img{
+                border-radius: 70px 190px 190px 70px;
+                border: 5px solid rgb(158, 10, 84);
+            }
+            .features{
+             width: 80%;
+             margin-top: 10px;
+             padding-top: 30px;
+             margin-left: 10%;
+             margin-right: auto;
+             text-align: center;
+             display: inline-block;
+            }
+            .storage{
+                width: 30%;
+                float: left;
+                padding: 40px 15px; 
+            }
+            .running{
+                width: 30%;
+                float: left;
+                padding: 40px 15px;
+            }
+            .group{
+                width: 30%;
+                float: left;
+                padding: 40px 15px;   
+            }
+           .head2{
+               font-size: 30px;
+               font-weight: lighter;
+           }
+           .featurepara{
+               display:inline-block;
+               width: 60%;
+               margin-left: 20%;
+               margin-right: 20%;
+               padding-top: 50px;
+               padding-bottom: 60px;
+              
+           }
+           .para2img{
+             float: left;
+             padding: 10px 10px;
+             padding-top: 30px;
+             
+           }
+           .para2img img{
+               height: 250px;
+               border-radius: 70px 190px 190px 70px;
+                border: 5px solid rgb(158, 10, 84);
+               
+           }
+           .para2{
+               float: right;
+               padding-left: 30px;
+               width: 40%;
+               text-align: left;
+           }
+           .dashboard{
+             text-align: center;
+             background-color: rgb(248, 239, 239);
+             padding: 40px 0px
+           }
+           .dashboardimg{
+              margin-right: auto;
+              margin-left: auto;
+              padding-left: 7.5%;
+              padding-right: 7.5%;
+           }
+           .review{
+               text-align: center;
+               display: inline-block;
+               padding: 40px 0px;
+           }
+           .review1{
+             float: left;
+             width:20%;
+             margin-left: 10%;
+             margin-right: auto;
+             padding: 25px 25px;
+             box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+             border-radius: 10px;
+           }
+           .reviewimg{
+               height: auto;
+               width: 100px;
+               border-radius: 50%;
+           }
+           .endsection{
+               background-color: rgb(158, 10, 84);
+               display: inline-block;
+               width: 100%;
+           }
+           .signup{
+               border-radius: 20px;
+               float:right;
+               font-weight:550;
+               color: rgb(158, 10, 84);
+               border: none;
+               margin-top: 40px;
+               margin-right: 80px;
+               padding: 5px 10px;
+           }
+           .signupform{
+               position: relative;
+               background-color: rgb(53, 46, 46);
+               padding: 0px;
+               margin: 0px;
+          
+           }
+           .centeredform{
+               position:absolute;
+               top: 50%;
+               left: 45%;
+               transform: translate(-50%, -50%);
+               border: none;
+               padding: 10px 20px;
+           }
+           .signupintro{
+               width: 50%;
+               float: left;
+               padding: 5px 3px;
+               color: white;
+               font-weight: lighter;
+           }
+           
+           .formsection{
+                width: 20%;
+                float: right;
+                color: white;
+                margin-top: 80px;
+           }
+           .formsection input{
+               background-color: rgb(221, 210, 210);
+               border: none;
+               border-radius: 5px;
+               width: 250px;
+               padding: 5px 8px;
+               margin-bottom: 20px;
+           }
+           .formsection b{
+               color: rgb(158, 10, 84);
+           }
+           .footer{
+               display: inline-block;
+               width: 100%;
+              
+           }
+           .iconcontact{
+               float: left;
+               width: 30%;
+               margin-top: 3%;
+               margin-left: 5%;
+               padding: 20px;
+           }
+           .iconcontact i{
+               padding: 0px 10px;
+           }
+           .bottomoslo{
+               float: left;
+               text-align: center;
+               width: 30%;
+               padding: 15px 0px;
+           }
+           .footerlinks{
+               float: left;
+               display: block;
+               width: 30%;
+               margin-right: 10px;
+               padding: 10px;
+           }
+          
+           .flink{
+               text-decoration: none;
+               padding: 20px 15px; 
+               margin-top: 20px;;
+               color: rgb(68, 64, 64)
+
+           }
+        </style>
+    </head>
+    <body>
+        <div topnnav>
+            <div class="oslo">oslo</div>
+            <div class="links">
+                <a href="#features">FEATURES</a>
+                <a href="#rewiews">REVIEWS</a>
+                <input class="signupbtn" type="button" value="SIGN UP">
+            </div>
+        </div>
+        <div class="container">
+        <img src="https://www.wallpapertip.com/wmimgs/190-1904094_entrepreneur-working-on-his-macbook-business-hands-computer.jpg"
+        alt="topimg.jpg" >
+        <div class="centered">
+            <h2 style="font-size: 40px; font-weight: lighter;">Unleash your potential</h2>
+            <p>I'm a text box. Dooble click me to edit or change the way I look. you can change the font, size, and so much more.<br>
+             For advanced styling options, click on "more" located on the right side of the editing menu.</p> 
+             <input style="border: none; border-radius: 15px; 
+             background-color: whitesmoke; color: hotpink; font-size: 15px; font-weight: bolder;
+             padding: 5px 20px; margin-top: 20px;" type="button" value="Learn more">
+        </div>
+    </div>
+    <div class="about" >
+        <div class="para1">
+        <h5>01 // About</h5>
+        <h2> We all want our jobs to run smoothly</h2>
+        <p>I'm a text box. Dooble click me to edit or change the way I look. you can change the font, size, and so much more.
+         For advanced styling options, click on "more" located on the right side of the editing menu.</p>
+         <br>
+         <input style="border: none; border-radius: 15px; 
+         background-color: rgb(189, 8, 98); color: white; font-size: 15px; font-weight: bolder;
+         padding: 5px 20px; margin-top: 20px;" type="button" value="Get Started"> 
+        </div>
+        <div class="aboutimg">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf-0_-f4sjklgsjx_4ym-ZVBT68amYhLCLgg&usqp=CAU"
+             alt="imageabout.jpg" >
+        </div>
+    </div>
+
+    <div class="features">
+        <h5>02//FEATURES</h5>
+        <h2 style="color:rgb(158, 10, 84);">Be on the Same page</h2>
+        <div class="storage">
+            <i class="material-icons" 
+            style="font-size:48px;color:rgb(158, 10, 84">format_list_bulleted</i>
+            <h2 class=head2>Stay organized</h2>
+           <p> I'm a text box. Double click me to edit the text 
+               box or to chnage the way I look.</p>
+        </div>
+        <div class="running">
+            <i class='fas fa-running'style=" color:rgb(158, 10,84); font-size:48px" ></i>
+            <h2 class="head2">Be more productive</h2>
+            <p> I'm a text box. Double click me to edit the text 
+                box or to chnage the way I look.</p>
+        </div>
+        <div class="group">
+            <i class="fas fa-users" style="font-size:48px; color:rgb(158, 10, 84"></i>
+            <h2 class="head2">Collaborate</h2>
+            <p> I'm a text box. Double click me to edit the text 
+                box or to chnage the way I look.</p>
+        </div>
+    </div>
+    <div class="featurepara">
+        <div class="para2img">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3-8qfmsoSC7Hp52EabryXUz3iFM1JxI7uqg&usqp=CAU"
+         alt="imgpara2.jpg" >
+        </div>
+         <div class="para2">
+             <h2 style=" font-size: 40px; font-weight: lighter;
+             margin: 20px 0; color: rgb(158, 10,84);">Add Structure to your daily tasks</h2>
+             <h4 style="margin: 10px 0;"> To do lists</h4>
+             <p style="margin: 8px;">I'm a text box. Double click me to edit the text 
+                box or to chnage the way I look.</p>
+                <h4 style="margin: 10px 0;">Track your meetings</h4>
+                <p style="margin: 8px;">I'm a text box. Double click me to edit the text 
+                    box or to chnage the way I look.</p>
+         </div>
+    </div>
+
+    <div class="dashboard">
+        <h5>03 // THE DASHBOARD </h5>
+        <h2 style="color: rgb(158, 10, 84);
+        width: 45%; margin-right: auto;margin-left: auto;
+        font-size: 30px;font-weight: lighter;">Everything works better when it looks better</h2>
+        <div class="dashboardimg">
+        <img src="https://essentialinstall.com/wp-content/uploads/2018/09/Control4-BakPak-BakPak-UI-on-Laptop-with-Notificaton-on-Phone.jpg"
+        alt="dashboard.jpg" style="width:80%; height: 550px;">
+    </div>
+    <div class="para3">
+        <p>I'm a text box. Dooble click me to edit or change the way 
+        I look. you can change the font, size, and so much more.<br>
+        For advanced styling options, click on "more" located on the
+        right side of the editing menu.</p>
+    </div>
+    </div>
+
+    <div class="review">
+        <h5>04 // THE REVIEWS</h5>
+        <h2 style="width:30%; font-size: 30px; margin-left: auto; margin-right: 
+             auto; padding 5px 15px; font-weight: lighter;">A Few words from our
+              <span style="color: rgb(158, 10, 84); ">amazing</span> and trusting customers</h2>
+        <div class="review1">
+            <p>I have been an illustrator for over 15 years now.
+                This tool allows me to manage multiple projects at 
+                once and makes my job way easier. Such a time saver. 
+            </p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI8JxVaZ50wleOKSrcZq4i8lXpb2xvQpL49w&usqp=CAU" 
+        alt="suzy.jpg" class="reviewimg">
+        <h3>Suzy Huller</h3>
+        <h4>Illustrator</h4>
+        </div>
+        <div class="review1">
+            <p>I can now easily keep track of my team annd all
+                on-going projects. No need to search rtyhrough files and folders
+                to see who completed the task. It's great! </p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXIeCzaTxZNdJ5olcgJutEAPe-YUtDoDVLuA&usqp=CAU"
+                 alt="mark.jpg" class="reviewimg">
+                 <h3>Suzy Huller</h3>
+                 <h4>Social Media</h4>
+        </div>
+        <div class="review1">
+            <p>I have been an illustrator for over 15 years now.
+                This tool allows me to manage multiple projects at 
+                once and makes my job way easier. Such a time saver. 
+            </p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI8JxVaZ50wleOKSrcZq4i8lXpb2xvQpL49w&usqp=CAU" 
+        alt="suzy.jpg" class="reviewimg">
+        <h3>Kimberly Lee</h3>
+        <h4>Project Coordinator</h4>
+    </div>
+    </div>
+
+    <div class="endsection">
+        <h2 style="color: white; float: left; font-weight: lighter;
+        font-size: 35px; margin-left: 50px;">Did you want to be notified when we launch?</h2>
+        <input class="signup" type="button" value="SIGN UP TODAY">
+    </div>
+    <div class="signupform">
+        <img src="https://s3.amazonaws.com/clarityfm-production/attachments/6241/default/blog_background_3.jpg?1440549487"
+        alt="signup.jpg" style="width: 100%; height: 650px; 
+        opacity: 0.3;">
+        <div class="centeredform">
+        <div class="signupintro">
+            <h5>05 // SIGNUP</h5>
+            <h2 style="font-size: 40px; font-weight: lighter;">Get 
+                Creative with this revolutionary tool</h2>
+            <p style="font-weight: lighter; font-size: 16px;
+             text-align: justify;">I'm a text box. Dooble click me to edit 
+             or change the way look. you can change the font, size,
+              and so much more.</p>
+        </div>
+        <div class="formsection">
+            <label for="name"  >NAME</label><br>
+            <input type="text"><br>
+            <label for="email">EMAIL ADDRESS<b>*</b></label><br>
+            <input type="email" value="@" ><br>
+            <label for="messege">MESSEGE<b>*</b></label><br>
+            <textarea style="height: 50px; 
+            background-color: rgb(221, 210, 210); border: none;
+            border-radius: 5px; width: 250px;  margin-bottom: 20px;" ></textarea><br>
+            <input type="button" value="Submit" style="background-color:
+             rgb(158, 10, 84); color: white;" >
+        </div>
+    </div>
+    </div>
+    <footer class="footer">
+        <div class="iconcontact" >
+            <i class="fab fa-facebook" style="font-size:24px"></i>
+            <i class='fab fa-twitter' style="font-size:24px"></i>
+            <i class='fab fa-instagram' style="font-size:24px "></i>
+        </div>
+
+        <div class="bottomoslo">
+            <h1 style="color:rgb(158, 10, 84);
+            font-weight: lighter; font-size: 40px;">oslo</h1>
+            <h4 style="font-weight: lighter;"><span style="color: red;">&#10084;</span>crafted
+                 lovingly with
+                Pagecloud</h4>
+        </div>
+
+        <div class="footerlinks"></div>
+        <div class="textcase">
+        <a class="flink" href="#">FEATURES</a>
+        <a class="flink" href="#">REVIEWS</a>
+        <a class="flink" href="#">SIGNUP</a>
+        </div>
+    </footer>
+    </body>
+</html>
